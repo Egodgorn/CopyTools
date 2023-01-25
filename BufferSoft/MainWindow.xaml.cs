@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using InputSimulatorStandard;
+using InputSimulatorStandard.Native;
 
 namespace BufferSoft
 {
@@ -82,8 +83,10 @@ namespace BufferSoft
                     _Simplenumber = _Simplenumber + _Simpleincome;
 
 
-                    _input.Keyboard.TextEntry(str);
+                    //_input.Keyboard.TextEntry(str);
                     Clipboard.SetText(str);
+                    _input.Keyboard.KeyPress(VirtualKeyCode.CONTROL);
+                    _input.Keyboard.KeyPress(VirtualKeyCode.VK_V);
                 }
                 else if (_HardWork)
                 {
@@ -95,7 +98,6 @@ namespace BufferSoft
                     str += _Hardtextend;
 
                     _input.Keyboard.TextEntry(str);
-                    Clipboard.SetText(str);
                 }
 
             }
@@ -106,12 +108,6 @@ namespace BufferSoft
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
-        {
-            _WIH = new WindowInteropHelper(this);
-            _HWNDsource = HwndSource.FromHwnd(_WIH.Handle);
         }
 
 
@@ -181,9 +177,11 @@ namespace BufferSoft
 
         private void TapControl_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            _HWNDsource.RemoveHook(_Hook);
-            bool res = UnregisterHotKey(_WIH.Handle, 1);//удаляем горячую клавишу
-            if (res == false) MessageBox.Show("RegisterHotKey failed");
+            if (_WIH != null)
+            {
+                _HWNDsource.RemoveHook(_Hook);
+                bool res = UnregisterHotKey(_WIH.Handle, 1);//удаляем горячую клавишу
+            }
 
             if (TapControl_1.SelectedIndex == 0)
             {
@@ -203,6 +201,12 @@ namespace BufferSoft
                 SimpleButtonStart.Content = "Старт";
                 _SimpleWork = false;
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _WIH = new WindowInteropHelper(this);
+            _HWNDsource = HwndSource.FromHwnd(_WIH.Handle);
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BufferSoft"
         mc:Ignorable="d"
-        Title="CopyTool" Height="239" Width="426" Loaded="Window_Loaded_1" MinWidth="426" MinHeight="239">
+        Title="CopyTool" Height="239" Width="426" MinWidth="426" MinHeight="239" Loaded="Window_Loaded">
     <Grid Height="223" VerticalAlignment="Center" HorizontalAlignment="Center" Width="426">
         <TabControl x:Name="TapControl_1" Margin="10,10,0,10" HorizontalAlignment="Left" Width="406" DataContextChanged="TabControl_DataContextChanged" SelectionChanged="TapControl_1_SelectionChanged">
             <TabItem Header="Copy simple text">
@@ -23,19 +23,19 @@
             <TabItem Header="Copy Hard Text">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Начало текста" Margin="10,10,282,147" Padding="0,0,0,0" Background="White" Height="18"/>
-                    <TextBox x:Name="HardTextStart" HorizontalAlignment="Left" Margin="123,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <TextBox x:Name="HardTextStart" HorizontalAlignment="Left" Margin="123,10,0,0" TextWrapping="Wrap" Text="tr(&quot;" VerticalAlignment="Top" Width="267" Height="18"/>
                     <Label Margin="10,33,282,124" Padding="0,0,0,0" Background="White" Height="18" Content="Цифра"/>
-                    <TextBox x:Name="HardNumber" HorizontalAlignment="Left" Margin="123,33,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <TextBox x:Name="HardNumber" HorizontalAlignment="Left" Margin="123,33,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="32" Height="18"/>
                     <Label Content="Инком" Margin="10,56,282,101" Padding="0,0,0,0" Background="White" Height="18"/>
-                    <TextBox x:Name="HardIncome" HorizontalAlignment="Left" Margin="123,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <TextBox x:Name="HardIncome" HorizontalAlignment="Left" Margin="123,57,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="32" Height="18"/>
                     <Button x:Name="HardButtonStart_Copy" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top" Width="380" Content="Старт" Click="HardButtonStart_Copy_Click"/>
                     <Label Content="Конец текста" Margin="10,80,282,77" Padding="0,0,0,0" Background="White" Height="18"/>
-                    <TextBox x:Name="HardTextEnd" HorizontalAlignment="Left" Margin="123,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <TextBox x:Name="HardTextEnd" HorizontalAlignment="Left" Margin="123,80,0,0" TextWrapping="Wrap" Text="&quot;)" VerticalAlignment="Top" Width="267" Height="18"/>
                 </Grid>
             </TabItem>
             <TabItem Margin="0,-1,-4,-1" Header="Settings">
                 <Grid Background="#FFE5E5E5">
-                    <CheckBox x:Name="CheckBox1" Content="Поверх всех окон" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Checked="CheckBox_Checked" IsChecked="False"/>
+                    <CheckBox x:Name="CheckBox1" Content="Поверх всех окон" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Checked="CheckBox_Checked" IsChecked="True"/>
                 </Grid>
             </TabItem>
         </TabControl>

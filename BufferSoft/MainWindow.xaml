@@ -1,0 +1,44 @@
+﻿<Window x:Name="Window" x:Class="BufferSoft.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BufferSoft"
+        mc:Ignorable="d"
+        Title="CopyTool" Height="239" Width="426" Loaded="Window_Loaded_1" MinWidth="426" MinHeight="239">
+    <Grid Height="223" VerticalAlignment="Center" HorizontalAlignment="Center" Width="426">
+        <TabControl Margin="10,10,0,10" HorizontalAlignment="Left" Width="406">
+            <TabItem Header="Copy simple text">
+                <Grid Background="#FFE5E5E5">
+                    <Label Margin="10,5,0,0" HorizontalAlignment="Left" Width="171" HorizontalContentAlignment="Center" Height="24" VerticalAlignment="Top" Content="Начальный текст"/>
+                    <Button x:Name="SimpleButtonStart" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top" Width="380" Content="Старт" Click="SimpleButtonStart_Click"/>
+
+                    <TextBox x:Name="srctext" HorizontalAlignment="Left" Margin="10,29,0,0" TextWrapping="Wrap" Text="TextBox" Width="171" Height="23" VerticalAlignment="Top"/>
+                    <TextBox x:Name="srcnum" HorizontalAlignment="Left" Margin="200,29,0,0" TextWrapping="Wrap" Text="0" Width="175" Height="23" VerticalAlignment="Top"/>
+                    <Label Margin="200,5,0,0" HorizontalAlignment="Left" Width="177" HorizontalContentAlignment="Center" Height="24" VerticalAlignment="Top" Content="Начальное число(x - 1)"/>
+                    <TextBox x:Name="income" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="1" Width="171" Height="23" VerticalAlignment="Center"/>
+                    <Label Margin="10,57,0,0" HorizontalAlignment="Left" Width="171" HorizontalContentAlignment="Center" Height="19" VerticalAlignment="Top" Content="Инком" Padding="0,0,5,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Copy Hard Text">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Начало текста" Margin="10,10,282,147" Padding="0,0,0,0" Background="White" Height="18"/>
+                    <TextBox x:Name="HardTextStart" HorizontalAlignment="Left" Margin="123,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <Label Margin="10,33,282,124" Padding="0,0,0,0" Background="White" Height="18" Content="Цифра"/>
+                    <TextBox x:Name="HardNumber" HorizontalAlignment="Left" Margin="123,33,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <Label Content="Инком" Margin="10,56,282,101" Padding="0,0,0,0" Background="White" Height="18"/>
+                    <TextBox x:Name="HardIncome" HorizontalAlignment="Left" Margin="123,57,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <Button x:Name="HardButtonStart_Copy" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top" Width="380" Content="Старт" Click="HardButtonStart_Copy_Click"/>
+                    <Label Content="Конец текста" Margin="10,80,282,77" Padding="0,0,0,0" Background="White" Height="18"/>
+                    <TextBox x:Name="HardTextEnd" HorizontalAlignment="Left" Margin="123,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="18"/>
+                </Grid>
+            </TabItem>
+            <TabItem Margin="0,-1,-4,-1" Header="Settings">
+                <Grid Background="#FFE5E5E5">
+                    <CheckBox x:Name="CheckBox1" Content="Поверх всех окон" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Checked="CheckBox_Checked" IsChecked="False"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

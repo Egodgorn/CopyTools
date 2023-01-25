@@ -173,5 +173,36 @@ namespace BufferSoft
                 if (res == false) MessageBox.Show("RegisterHotKey failed");
             }
         }
+
+        private void TabControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            //MessageBox.Show(TapControl_1.SelectedIndex.ToString());//ne robit
+        }
+
+        private void TapControl_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _HWNDsource.RemoveHook(_Hook);
+            bool res = UnregisterHotKey(_WIH.Handle, 1);//удаляем горячую клавишу
+            if (res == false) MessageBox.Show("RegisterHotKey failed");
+
+            if (TapControl_1.SelectedIndex == 0)
+            {
+                HardButtonStart_Copy.Content = "Старт";
+                _HardWork = false;
+            }
+            else if (TapControl_1.SelectedIndex == 1)
+            {
+                SimpleButtonStart.Content = "Старт";
+                _SimpleWork = false;
+            }
+            else if (TapControl_1.SelectedIndex == 2)//settings
+            {
+                HardButtonStart_Copy.Content = "Старт";
+                _HardWork = false;
+
+                SimpleButtonStart.Content = "Старт";
+                _SimpleWork = false;
+            }
+        }
     }
 }

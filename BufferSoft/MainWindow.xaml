@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CopyTool" Height="239" Width="426" Loaded="Window_Loaded_1" MinWidth="426" MinHeight="239">
     <Grid Height="223" VerticalAlignment="Center" HorizontalAlignment="Center" Width="426">
-        <TabControl Margin="10,10,0,10" HorizontalAlignment="Left" Width="406">
+        <TabControl x:Name="TapControl_1" Margin="10,10,0,10" HorizontalAlignment="Left" Width="406" DataContextChanged="TabControl_DataContextChanged" SelectionChanged="TapControl_1_SelectionChanged">
             <TabItem Header="Copy simple text">
                 <Grid Background="#FFE5E5E5">
                     <Label Margin="10,5,0,0" HorizontalAlignment="Left" Width="171" HorizontalContentAlignment="Center" Height="24" VerticalAlignment="Top" Content="Начальный текст"/>

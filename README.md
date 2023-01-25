@@ -8,7 +8,7 @@
   <br>  TextBox4
   <br>  TextBox5
  <br>Так же можно создавать копии с цифрой внутри слова</br>
- Пример:
+ Пример:</br>
   tr("TextBox1")</br>
   tr("TextBox2")</br>
   tr("TextBox3")</br>
